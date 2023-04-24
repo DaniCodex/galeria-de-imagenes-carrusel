@@ -22,13 +22,21 @@ function clicked(position) {
 }
 
 rightBtn.addEventListener("click", e => {
-    indexImg++;
-    fulImg.src = listaImg[indexImg].src
+    if (indexImg >= listaImg.length-1) {
+      indexImg = -1;
+    } {
+      indexImg++;
+    }
+    fulImg.src = listaImg[indexImg].src;
 });
 
 leftBtn.addEventListener("click", e => {
-    indexImg--;
-    fulImg.src = listaImg[indexImg].src
+    if (indexImg <= 0) {
+      indexImg = listaImg.length;
+    } {
+      indexImg--;
+    }
+    fulImg.src = listaImg[indexImg].src;
 })
     
 closeImg.addEventListener("click", e => fulImgBox.style.display = "none")
